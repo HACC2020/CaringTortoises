@@ -1,0 +1,21 @@
+/* PLAN TO ADD STUFF HERE */
+import React, { useState, useEffect } from 'react';
+import Loading from './Loading';
+import CovidMap from './CovidMap';
+import Legend from './Legend';
+import LoadBuildingsTask from '../../../tasks/LoadBuildingsTask';
+
+const Covid19 = () => {
+  const [buildings, setBuildings] = useState([]);
+  const load = () => {
+    const loadBuildingsTask = new LoadBuildingsTask();
+    loadBuildingsTask.load(setBuildings);
+  };
+  useEffect(load, []);
+
+  return (<div>
+    {buildings.length === 0 ? <Loading/> : <div><CovidMap/> <Legend/></div>}
+  </div>);
+};
+
+export default Covid19;

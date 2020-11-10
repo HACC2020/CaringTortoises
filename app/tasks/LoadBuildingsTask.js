@@ -1,4 +1,4 @@
-import { features } from './data/campusmap.json';
+import { features } from '../data/campusmap.json';
 
 class LoadBuildingsTask {
   load = (setState) => {

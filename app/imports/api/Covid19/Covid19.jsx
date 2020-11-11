@@ -1,12 +1,12 @@
 /* PLAN TO ADD STUFF HERE */
 import React, { useState, useEffect } from 'react';
 import LoadBuildingsTask from '../../../tasks/LoadBuildingsTask';
-import CovidMap from './CovidMap';
+import CovidMap from './CovidMap.jsx';
 import Legend from './Legend';
 import Loading from './Loading';
 
 const Covid19 = () => {
-  const [buildings, setBuildings] = useState(['Canada']);
+  const [buildings, setBuildings] = useState([]);
 
   const load = () => {
     const loadBuildingsTask = new LoadBuildingsTask();
@@ -17,7 +17,7 @@ const Covid19 = () => {
 
   return (
       <div>
-        {buildings.length === 0 ? <Loading/> : <div> <CovidMap/> <Legend/> </div>}
+        {buildings.length === 0 ? <Loading/> : <div> /*<CovidMap/> <Legend/>*/ </div>}
       </div>);
 };
 
